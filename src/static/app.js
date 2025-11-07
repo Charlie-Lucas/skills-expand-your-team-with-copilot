@@ -309,17 +309,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = activityName.toLowerCase();
     const desc = description.toLowerCase();
 
+    // Check for arts first (including manga) before generic sports keywords
     if (
-      name.includes("soccer") ||
-      name.includes("basketball") ||
-      name.includes("sport") ||
-      name.includes("fitness") ||
-      desc.includes("team") ||
-      desc.includes("game") ||
-      desc.includes("athletic")
-    ) {
-      return "sports";
-    } else if (
       name.includes("art") ||
       name.includes("music") ||
       name.includes("theater") ||
@@ -329,6 +320,16 @@ document.addEventListener("DOMContentLoaded", () => {
       desc.includes("paint")
     ) {
       return "arts";
+    } else if (
+      name.includes("soccer") ||
+      name.includes("basketball") ||
+      name.includes("sport") ||
+      name.includes("fitness") ||
+      desc.includes("team") ||
+      desc.includes("game") ||
+      desc.includes("athletic")
+    ) {
+      return "sports";
     } else if (
       name.includes("science") ||
       name.includes("math") ||
